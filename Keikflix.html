@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeikFlix - Online Pastry Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        
+        body {
+            font-family: 'Comic Sans MS', cursive; 
+            margin: 0;
+            padding: 0;
+            background-color: #ffc0cb; 
+            background-image: linear-gradient(45deg, #ffc0cb, #ffb6c1); 
+        }
+
+        header {
+            background-color: #ffe6ea; 
+            color: #333;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0; 
+        }
+
+        .pastry {
+            background-color: #ffe6ea; 
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .pastry h3 {
+            margin-top: 0;
+            color: #333; 
+        }
+
+        .pastry p {
+            margin-bottom: 10px;
+            color: #777; 
+        }
+
+        .pastry button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ff99ab; 
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .pastry button:hover {
+            background-color: #ff6d8d; 
+        }
+
+        footer {
+            background-color: #ffe6ea; 
+            color: #666; /* Light footer text color 
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0; 
+        }
+
+        footer a {
+            color: #ee4d2d; 
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .cart {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #ff99ab; 
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart i {
+            font-size: 24px;
+            color: #fff; 
+            cursor: pointer;
+        }
+
+        .cart span {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #ff6d8d; 
+            color: #fff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .logo img {
+            max-width: 100px;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t1.6435-9/110321124_129590282153332_4959050181219323346_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGDwKhRKQzZuueLHsMlqiub782Ssp0nOd3vzZKynSc53W3pHJbZL63x8AP4CMsumzjcI368WDJYlMrb_k1c6K5w&_nc_ohc=tWp4_sMNgoEQ7kNvgGAqakl&_nc_ht=scontent.fmnl17-1.fna&oh=00_AfA8m4afw_xg_xWFABpg0x9OLEMF1SPUiAQYVtEEzu0gww&oe=6657C1E2" alt="KeikFlix Logo">
+        </div>
+        <h1>Welcome to KeikFlix - Online Pastry Shop</h1>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>About Us</h2>
+            <p>Welcome to KeikFlix, your go-to destination for delicious pastries online! At KeikFlix, we're passionate about bringing you the finest and freshest pastries made with love and care. Our team of talented bakers works tirelessly to ensure that every bite is a delightful experience.</p>
+            <p>Whether you're craving cupcakes, cookies, croissants, or any other pastry delights, we've got you covered. Explore our wide selection of mouthwatering treats and indulge your sweet tooth with KeikFlix.</p>
+        </section>
+
+
+        <section>
+            <h2>Our Pastry Selection</h2>
+
+
+
+            <div class="pastry">
+                <h3><i class="fas fa-cupcake"></i> Cupcake</h3>
+                <p>Delicious cupcake with creamy frosting.</p>
+                <p>Price: ₱125.00</p>
+                <button onclick="addToCart('Cupcake', 125.00)">Add to Cart</button>
+            </div>
+
+
+            <div class="pastry">
+                <h3><i class="fas fa-cookie"></i> Chocolate Chip Cookie</h3>
+                <p>Classic chocolate chip cookie with gooey chocolate chunks.</p>
+                <p>Price: ₱80.00</p>
+                <button onclick="addToCart('Chocolate Chip Cookie', 80.00)">Add to Cart</button>
+            </div>
+
+
+            <div class="pastry">
+                <h3><i class="fas fa-bread-slice"></i> Croissant</h3>
+                <p>Flaky and buttery croissant.</p>
+                <p>Price: ₱150.00</p>
+                <button onclick="addToCart('Croissant', 150.00)">Add to Cart</button>
+            </div>
+
+
+            <div class="pastry">
+                <h3><i class="fas fa-donut"></i> Glazed Donut</h3>
+                <p>Classic glazed donut with a sugary coating.</p>
+                <p>Price: ₱90.00</p>
+                <button onclick="addToCart('Glazed Donut', 90.00)">Add to Cart</button>
+            </div>
+
+
+            <div class="pastry">
+                <h3><i class="fas fa-cookie"></i> Sugar Cookie</h3>
+                <p>Buttery and soft sugar cookie.</p>
+                <p>Price: ₱70.00</p>
+                <button onclick="addToCart('Sugar Cookie', 70.00)">Add to Cart</button>
+            </div>
+
+
+            <div class="pastry">
+                <h3><i class="fas fa-pie"></i> Apple Pie</h3>
+                <p>Homemade apple pie with a flaky crust.</p>
+                <p>Price: ₱200.00</p>
+                <button onclick="addToCart('Apple Pie', 200.00)">Add to Cart</button>
+            </div>
+
+
+            <div class="pastry">
+                <h3><i class="fas fa-ice-cream"></i> Ice Cream Cone</h3>
+                <p>Creamy vanilla ice cream in a crispy cone.</p>
+                <p>Price: ₱60.00</p>
+                <button onclick="addToCart('Ice Cream Cone', 60.00)">Add to Cart</button>
+            </div>
+
+
+            <div class="pastry">
+                <h3><i class="fas fa-pizza-slice"></i> Pizza Slice</h3>
+                <p>Thin-crust pizza slice with cheese and pepperoni.</p>
+                <p>Price: ₱180.00</p>
+                <button onclick="addToCart('Pizza Slice', 180.00)">Add to Cart</button>
+            </div>
+
+
+            <div class="pastry">
+                <h3><i class="fas fa-birthday-cake"></i> Birthday Cake</h3>
+                <p>Colorful birthday cake with candles.</p>
+                <p>Price: ₱300.00</p>
+                <button onclick="addToCart('Birthday Cake', 300.00)">Add to Cart</button>
+            </div>
+
+
+            <div class="pastry">
+                <h3><i class="fas fa-bread-loaf"></i> Baguette</h3>
+                <p>Crusty baguette perfect for sandwiches.</p>
+                <p>Price: ₱120.00</p>
+                <button onclick="addToCart('Baguette', 120.00)">Add to Cart</button>
+            </div>
+
+        </section>
+    </main>
+
+
+    <div class="cart" onclick="showCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cartCount">0</span>
+    </div>
+
+
+    <footer>
+        <p>Follow us on <a href="https://www.facebook.com/profile.php?id=100063744712446" target="_blank">Facebook</a> for updates!</p>
+    </footer>
+
+    <script>
+        let cartCount = 0;
+
+
+        function addToCart(itemName, price) {
+            cartCount++;
+            updateCartCount();
+            alert(itemName + " added to cart. Total: ₱" + price.toFixed(2));
+            
+        }
+
+        
+        function updateCartCount() {
+            document.getElementById("cartCount").innerText = cartCount;
+        }
+
+       
+        function showCart() {
+            alert("You have " + cartCount + " item(s) in your cart.");
+        }
+    </script>
+</body>
+</html>
